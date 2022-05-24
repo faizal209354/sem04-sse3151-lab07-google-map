@@ -31,7 +31,7 @@ class _GMapState extends State<GMap> {
 
   void _setMarkerIcon() async {
     _markerIcon =
-        await BitmapDescriptor.fromAssetImage(ImageConfiguration(), 'assets/noodle_icon.png');
+        await BitmapDescriptor.fromAssetImage(ImageConfiguration(), 'assets/upm_logo.png');
   }
 
   void _toggleMapStyle() async {
@@ -46,10 +46,10 @@ class _GMapState extends State<GMap> {
 
   void _setPolygons() {
     List<LatLng> polygonLatLongs = <LatLng>[];
-    polygonLatLongs.add(LatLng(37.78493, -122.42932));
-    polygonLatLongs.add(LatLng(37.78693, -122.41942));
-    polygonLatLongs.add(LatLng(37.78923, -122.41542));
-    polygonLatLongs.add(LatLng(37.78923, -122.42582));
+    polygonLatLongs.add(LatLng(3.0551537, 101.7158890));
+    polygonLatLongs.add(LatLng(3.0546394, 101.7321968));
+    polygonLatLongs.add(LatLng(3.0349262, 101.7253304));
+    polygonLatLongs.add(LatLng(3.0534395, 101.7160606));
 
     _polygons.add(
       Polygon(
@@ -63,10 +63,12 @@ class _GMapState extends State<GMap> {
 
   void _setPolylines() {
     List<LatLng> polylineLatLongs = <LatLng>[];
-    polylineLatLongs.add(LatLng(37.74493, -122.42932));
-    polylineLatLongs.add(LatLng(37.74693, -122.41942));
-    polylineLatLongs.add(LatLng(37.74923, -122.41542));
-    polylineLatLongs.add(LatLng(37.74923, -122.42582));
+    polylineLatLongs.add(LatLng(2.9481106, 101.6957016));
+    polylineLatLongs.add(LatLng(2.9421071, 101.6903801));
+    polylineLatLongs.add(LatLng(2.9349028, 101.6951866));
+    polylineLatLongs.add(LatLng(2.9362750, 101.7063446));
+    polylineLatLongs.add(LatLng(2.9441654, 101.7089195));
+    polylineLatLongs.add(LatLng(2.9479391, 101.7047997));
 
     _polylines.add(
       Polyline(
@@ -82,8 +84,8 @@ class _GMapState extends State<GMap> {
     _circles.add(
       Circle(
           circleId: CircleId("0"),
-          center: LatLng(37.76493, -122.42432),
-          radius: 1000,
+          center: LatLng(2.9996455, 101.7072784),
+          radius: 2000,
           strokeWidth: 2,
           fillColor: Color.fromRGBO(102, 51, 153, .5)),
     );
@@ -96,10 +98,10 @@ class _GMapState extends State<GMap> {
       _markers.add(
         Marker(
             markerId: MarkerId("0"),
-            position: LatLng(37.77483, -122.41942),
+            position: LatLng(2.9996455, 101.7072784),
             infoWindow: InfoWindow(
-              title: "San Francsico",
-              snippet: "An Interesting city",
+              title: "Universiti Putra Malaysia",
+              snippet: "Berilmu Berbakti",
             ),
             icon: _markerIcon),
       );
@@ -115,7 +117,7 @@ class _GMapState extends State<GMap> {
           GoogleMap(
             onMapCreated: _onMapCreated,
             initialCameraPosition: CameraPosition(
-              target: LatLng(37.77483, -122.41942),
+              target: LatLng(2.9996455, 101.7072784),
               zoom: 12,
             ),
             markers: _markers,
@@ -128,7 +130,7 @@ class _GMapState extends State<GMap> {
           Container(
             alignment: Alignment.bottomCenter,
             padding: EdgeInsets.fromLTRB(0, 0, 0, 80),
-            child: Text("Coding with Curry"),
+            child: Text("Lab07 - Google Map"),
           )
         ],
       ),
